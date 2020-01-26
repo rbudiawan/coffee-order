@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 tvPrice.text = getString(R.string.price_value,price.toString())
 
                 val myIdentity = MyName(etName.text.toString())
-                myName = myIdentity
+                namaku = myIdentity
                 tvResult.visibility = View.VISIBLE
             }
         }
