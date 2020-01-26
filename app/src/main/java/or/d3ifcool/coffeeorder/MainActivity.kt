@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.library.baseAdapters.BR.namaku
 import or.d3ifcool.coffeeorder.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -41,7 +42,7 @@ class MainActivity : AppCompatActivity() {
                 tvPrice.text = getString(R.string.price_value,price.toString())
 
                 val myIdentity = MyName(etName.text.toString())
-                namaku = myIdentity
+                myName = myIdentity
                 tvResult.visibility = View.VISIBLE
             }
         }
