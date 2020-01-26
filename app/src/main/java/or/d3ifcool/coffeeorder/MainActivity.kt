@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
 
+        //binding data
         binding.apply {
             bPlus.setOnClickListener {
                 quantity +=1
