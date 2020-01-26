@@ -7,4 +7,9 @@
     <string name="price">Price</string>
     <string name="order">Order</string>
     <string name="price_value">\u0024%1s \nThank you</string>
+    <string name="name">Name</string>
+    <string name="whipped_cream">Whipped Cream</string>
+    <string name="toppings">Toppings</string>
+    <string name="chocolate">Chocolate</string>
+    <string name="hello">Hello %s, your order is here</string>
 </resources>

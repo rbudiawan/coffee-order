@@ -2,23 +2,50 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myName"
+            type="or.d3ifcool.coffeeorder.MyName" />
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
 
+        <Button
+            android:id="@+id/b_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/order"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+
         <TextView
             android:id="@+id/t_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="24dp"
             android:text="@string/quantity"
             android:textAllCaps="true"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/cb_choco" />
+
+        <TextView
+            android:id="@+id/t_toppings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/toppings"
+            android:textAllCaps="true"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_name" />
 
         <Button
             android:id="@+id/b_minus"
@@ -34,22 +61,24 @@
             android:id="@+id/tv_quantity"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:text="@string/zero"
             android:textSize="24sp"
             app:layout_constraintBottom_toBottomOf="@+id/b_minus"
             app:layout_constraintStart_toEndOf="@+id/b_minus"
-            app:layout_constraintTop_toTopOf="@+id/b_minus" />
+            app:layout_constraintTop_toTopOf="@+id/b_minus"
+            app:layout_constraintVertical_bias="0.562" />
 
         <Button
             android:id="@+id/b_plus"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="8dp"
             android:text="@string/plus"
             app:layout_constraintBottom_toBottomOf="@+id/tv_quantity"
             app:layout_constraintStart_toEndOf="@+id/tv_quantity"
-            app:layout_constraintTop_toTopOf="@+id/tv_quantity" />
+            app:layout_constraintTop_toTopOf="@+id/tv_quantity"
+            app:layout_constraintVertical_bias="0.562" />
 
         <TextView
             android:id="@+id/t_price"
@@ -72,17 +101,55 @@
             android:textColor="@android:color/background_dark"
             android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/t_price"
+            app:layout_constraintTop_toBottomOf="@+id/tv_result"
             tools:text="$0" />
 
-        <Button
-            android:id="@+id/b_order"
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/cb_whipped"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:text="@string/order"
+            android:layout_marginTop="8dp"
+            android:text="@string/whipped_cream"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_price" />
+            app:layout_constraintTop_toBottomOf="@+id/t_toppings" />
+
+        <CheckBox
+            android:id="@+id/cb_choco"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@string/chocolate"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cb_whipped" />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:text="@{@string/hello(myName.name)}"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/t_price"
+            tools:text="Hi" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
